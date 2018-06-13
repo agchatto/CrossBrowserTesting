@@ -17,17 +17,16 @@ import org.testng.annotations.Test;
 public class CrossBrowser {
 	WebDriver driver = null;
 
-	@BeforeMethod
-	@Parameters(value = { "browser" })
+	@BeforeMethod @Parameters(value = { "browser" })
 	public void beforeMethod(String browser) {
 
 		if (browser.equalsIgnoreCase("Chrome")) {
 			System.out.println("CHROME NAVIGATED");
-			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("Firefox")) {
 			System.out.println("FIRE NAVIGATED");
-			System.setProperty("webdriver.firefox.driver", "geckodriver.exe");
+			//System.setProperty("webdriver.firefox.driver", "geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
